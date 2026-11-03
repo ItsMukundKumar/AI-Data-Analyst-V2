@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <title>AI Data Analyst</title>
+</head>
+
+<body>
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main">
+        <div class="page">
+            <section class="hero">
+                <h1>Turn Your Data Into Decisions.</h1>
+                <p>Your intelligent data analyst. Upload your datasets, ask questions in natural language, discover
+                    hidden patterns, generate visualizations, and extract meaningful insights without writing complex
+                    queries.</p>
+                <button class="btn btn-primary" data-scroll-upload><i data-lucide="upload"></i> Upload Your
+                    Dataset</button>
+            </section>
+            <section class="features" aria-label="Capabilities">
+                <article class="card feature">
+                    <div class="ico"><i data-lucide="brain-circuit"></i></div>
+                    <h3>Intelligent Data Analysis</h3>
+                    <p>Explore datasets using natural language and AI-powered reasoning.</p>
+                </article>
+                <article class="card feature">
+                    <div class="ico"><i data-lucide="sparkles"></i></div>
+                    <h3>Automated Data Cleaning</h3>
+                    <p>Identify missing values, duplicates, inconsistent data, and data quality issues.</p>
+                </article>
+                <article class="card feature">
+                    <div class="ico"><i data-lucide="line-chart"></i></div>
+                    <h3>Smart Visualizations</h3>
+                    <p>Generate meaningful charts and explore patterns in your data.</p>
+                </article>
+                <article class="card feature">
+                    <div class="ico"><i data-lucide="lightbulb"></i></div>
+                    <h3>AI-Powered Insights</h3>
+                    <p>Discover trends, correlations, anomalies, and actionable insights.</p>
+                </article>
+            </section>
+            <section aria-label="Upload dataset">
+                <div class="dropzone" id="dropzone">
+                    <div class="big"><i data-lucide="file-up" width="40" height="40"></i></div>
+                    <h2>Drag &amp; drop your dataset here</h2>
+                    <p>CSV, XLSX or XLS · up to 50 MB</p>
+                    <input type="file" id="file-input" accept=".csv,.xlsx,.xls" hidden>
+                    <button class="btn" id="browse-btn" type="button">Browse files</button>
+                </div>
+                <div class="card file-card hidden" id="file-card">
+                    <i data-lucide="file-spreadsheet"></i>
+                    <div class="meta">
+                        <div class="name" id="file-name"></div>
+                        <div class="sub" id="file-sub"></div>
+                    </div>
+                    <button class="icon-btn" id="remove-btn" type="button" aria-label="Remove selected file"><i
+                            data-lucide="x"></i></button>
+                    <button class="btn btn-primary" id="upload-btn" type="button" disabled><i data-lucide="upload"></i>
+                        Upload</button>
+                </div>
+                <div class="status hidden" id="status" role="status" aria-live="polite"></div>
+                <p class="note">Your dataset is processed securely by the application and becomes the context for your
+                    AI analysis session.</p>
+            </section>
+        </div>
+    </main>
+    <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/upload.js"></script>
+</body>
+
+</html>

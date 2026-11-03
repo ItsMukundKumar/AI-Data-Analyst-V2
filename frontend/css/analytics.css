@@ -1,0 +1,113 @@
+/* Analytics dashboard + shared SaaS components (loaded by analytics.html and dashboard.html) */
+.analytics { display: flex; flex-direction: column; min-height: 100vh }
+.a-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 22px 28px 14px; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 4; background: rgba(13, 17, 23, .92); backdrop-filter: blur(8px) }
+.a-header h1 { font-size: 20px; letter-spacing: -.01em; margin-bottom: 6px }
+.header-actions { display: flex; gap: 8px; flex-wrap: wrap }
+.a-content { padding: 24px 28px 64px; max-width: 1500px; width: 100% }
+.chips { display: flex; gap: 8px; flex-wrap: wrap }
+.chip.accent { color: var(--accent); border-color: rgba(55, 142, 255, .4) }
+.btn.sm { padding: 6px 12px; font-size: 13px }
+.btn.ghost { background: none }
+
+/* KPI cards */
+.kpis { display: grid; grid-template-columns: repeat(auto-fill, minmax(148px, 1fr)); gap: 14px; margin-bottom: 28px }
+.kpi { padding: 16px 18px }
+.kpi .lbl { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .05em; display: flex; align-items: center; gap: 6px }
+.kpi .val { font-size: 26px; font-weight: 600; letter-spacing: -.02em; margin-top: 6px; line-height: 1.2 }
+.kpi .sub { color: var(--muted); font-size: 12px; margin-top: 2px; min-height: 18px }
+.kpi.warn .val { color: #F2A33A }
+
+/* Sections + grids */
+.section { margin-bottom: 36px; scroll-margin-top: 110px }
+.section > .sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 14px; flex-wrap: wrap }
+.section h2 { font-size: 16px }
+.section .sec-sub { color: var(--muted); font-size: 13px }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(460px, 1fr)); gap: 16px }
+.pills { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px }
+.pill { border: 1px solid var(--border); border-radius: 99px; padding: 4px 14px; font-size: 13px; color: var(--muted); background: var(--card) }
+.pill:hover { color: var(--text); border-color: var(--accent) }
+
+/* Chart cards */
+.chart-card { padding: 14px 14px 10px; min-width: 0 }
+.chart-card header { display: flex; justify-content: space-between; gap: 8px; align-items: flex-start; margin-bottom: 4px; padding: 0 4px }
+.chart-card h3 { font-size: 14px }
+.chart-card .sub { color: var(--muted); font-size: 12px }
+.chart-card .notes { color: var(--muted); font-size: 12px; padding: 4px 6px 0 }
+.card-actions { display: flex; gap: 2px; flex-shrink: 0 }
+.plot { width: 100% }
+.icon-btn { background: none; border: 0; color: var(--muted); border-radius: 6px; padding: 5px; display: inline-flex; align-items: center; gap: 4px }
+.icon-btn:hover { background: #1d2530; color: var(--text) }
+
+/* States */
+.state { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 36px 16px; color: var(--muted); text-align: center; flex-wrap: wrap }
+.state.error { color: #ffb4ae }
+.spinner { width: 16px; height: 16px; border: 2px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin .7s linear infinite; display: inline-block }
+@keyframes spin { to { transform: rotate(360deg) } }
+.skeleton { background: linear-gradient(90deg, #151B23 25%, #1b2330 50%, #151B23 75%); background-size: 200% 100%; animation: shimmer 1.4s infinite; border-radius: var(--radius); height: 340px; border: 1px solid var(--border) }
+@keyframes shimmer { to { background-position: -200% 0 } }
+
+/* Filters */
+.filter-bar { border-bottom: 1px solid var(--border); padding: 12px 28px; background: var(--side) }
+.filter-bar .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-start }
+.f-card { border: 1px solid var(--border); background: var(--card); border-radius: 10px; padding: 8px 10px; min-width: 200px; font-size: 13px }
+.f-card .f-head { display: flex; justify-content: space-between; align-items: center; color: var(--muted); margin-bottom: 6px; gap: 8px }
+.f-card .f-body { display: flex; gap: 6px; align-items: center }
+.f-card .cat-list { max-height: 150px; overflow: auto; display: flex; flex-direction: column; gap: 2px; min-width: 180px }
+.f-card label { display: flex; gap: 6px; align-items: center; cursor: pointer }
+input[type=text], input[type=number], input[type=date], input[type=search], select { background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 8px; padding: 6px 10px; font: inherit; font-size: 13px; min-width: 0 }
+input[type=number] { width: 100px } input:focus, select:focus { outline: none; border-color: var(--accent) }
+select { max-width: 100% }
+
+/* Builder */
+.builder { display: grid; grid-template-columns: 300px 1fr; gap: 16px }
+.controls { padding: 16px; display: flex; flex-direction: column; gap: 12px; align-self: start }
+.controls label { display: flex; flex-direction: column; gap: 4px; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em }
+.controls select, .controls input { text-transform: none; letter-spacing: 0; width: 100% }
+.controls .hint { color: var(--muted); font-size: 12px; text-transform: none; letter-spacing: 0 }
+.builder-out { min-width: 0 }
+
+/* Tables */
+.table-wrap { overflow: auto; border: 1px solid var(--border); border-radius: var(--radius); background: var(--card) }
+table.t { border-collapse: collapse; width: 100%; font-size: 13px }
+.t th, .t td { padding: 8px 12px; border-bottom: 1px solid var(--border); text-align: left; white-space: nowrap; max-width: 280px; overflow: hidden; text-overflow: ellipsis }
+.t th { color: var(--muted); font-weight: 500; position: sticky; top: 0; background: #1a212b; cursor: default }
+.t th.sortable { cursor: pointer } .t th.sortable:hover { color: var(--text) }
+.t tr:last-child td { border-bottom: 0 }
+.t td.null { color: #5b6573; font-style: italic }
+.kind { font-size: 11px; border-radius: 6px; padding: 1px 7px; border: 1px solid var(--border); color: var(--muted) }
+.kind.numeric { color: #6fb1ff } .kind.categorical { color: #8be09b } .kind.datetime { color: #f2c46a } .kind.text { color: #c9a4ff } .kind.identifier, .kind.constant { color: #7d8fa6 } .kind.boolean { color: #ff9bb0 }
+.toolbar { display: flex; gap: 10px; align-items: center; margin-bottom: 12px; flex-wrap: wrap }
+.pager { display: flex; gap: 10px; align-items: center; justify-content: flex-end; margin-top: 12px; color: var(--muted); font-size: 13px }
+
+/* Insights */
+.insights { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 14px }
+.insight { padding: 16px 18px; border-left: 3px solid var(--accent) }
+.insight.warning { border-left-color: #F2A33A } .insight.good { border-left-color: var(--ok) }
+.insight h4 { font-size: 14px; margin-bottom: 4px } .insight p { color: var(--muted); font-size: 13.5px }
+.cols2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px }
+.form-card { padding: 18px; display: flex; flex-direction: column; gap: 12px; max-width: 640px }
+.form-card label.chk { display: flex; gap: 8px; align-items: center; cursor: pointer }
+.steps { color: var(--muted); font-size: 13.5px; padding-left: 18px }
+.ba { display: grid; grid-template-columns: 1fr 1fr; gap: 12px }
+.ba .kpi .val { font-size: 20px }
+.dataset-row { display: flex; align-items: center; gap: 14px; padding: 14px 16px; margin-bottom: 10px; flex-wrap: wrap }
+.dataset-row .meta { flex: 1; min-width: 200px } .dataset-row .name { font-weight: 500 } .dataset-row .sub { color: var(--muted); font-size: 12.5px; word-break: break-all }
+
+/* Toasts */
+#toasts { position: fixed; bottom: 20px; right: 20px; display: flex; flex-direction: column; gap: 8px; z-index: 50 }
+.toast { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--accent); padding: 10px 14px; border-radius: 8px; box-shadow: 0 6px 24px rgba(0, 0, 0, .5); font-size: 13.5px; max-width: 340px }
+.toast.error { border-left-color: var(--danger) } .toast.success { border-left-color: var(--ok) }
+
+/* Responsive: sidebar becomes a slide-over on narrow screens */
+@media (max-width: 900px) {
+    .a-header { padding-left: 62px } .a-content { padding: 18px 16px 48px } .filter-bar { padding: 12px 16px }
+    .grid { grid-template-columns: 1fr } .builder { grid-template-columns: 1fr }
+    .workspace .chat-header { padding-left: 62px }
+}
+@media (max-width: 520px) { .kpis { grid-template-columns: repeat(2, 1fr) } .kpi .val { font-size: 21px } .ba { grid-template-columns: 1fr } }
+
+/* AI-chat rich messages (used by dashboard.html) */
+.msg .rich { display: flex; flex-direction: column; gap: 12px; max-width: min(100%, 760px); min-width: 0; flex: 1 }
+.msg.ai .bubble { max-width: 100% }
+.chat .chart-card { margin-top: 2px }
+.chat .t { font-size: 12.5px }

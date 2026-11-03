@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/analytics.css">
+    <title>AI Chat · AI Data Analyst</title>
+</head>
+
+<body>
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="main workspace">
+        <header class="chat-header">
+            <h1>AI Data Analyst</h1>
+            <div class="chips">
+                <span class="chip" id="h-file"></span><span class="chip" id="h-format"></span><span class="chip"
+                    id="h-rows"></span><span class="chip" id="h-cols"></span>
+                <span class="chip"><span class="dot"></span>Dataset uploaded</span>
+                <span class="chip" id="h-filters" hidden></span>
+            </div>
+            <a class="btn" href="analytics.html#dashboard"><i data-lucide="bar-chart-3"></i> Dashboard</a>
+            <button class="btn" id="toggle-panel" aria-expanded="true" aria-controls="panel"><i
+                    data-lucide="panel-right"></i> Details</button>
+        </header>
+        <div class="body">
+            <section class="chat" aria-label="Chat">
+                <div class="messages" id="messages" aria-live="polite">
+                    <div class="thread" id="thread">
+                        <div class="welcome" id="welcome">
+                            <h2>Your dataset is ready!</h2>
+                            <p>Ask me anything about your data. I can help you explore patterns, understand columns,
+                                investigate trends, and generate visualizations.</p>
+                            <div class="suggestions">
+                                <button class="suggestion">Give me an overview of this dataset.</button>
+                                <button class="suggestion">What are the key insights?</button>
+                                <button class="suggestion">Identify missing values and data quality issues.</button>
+                                <button class="suggestion">Show me the correlation between numerical columns.</button>
+                                <button class="suggestion">Find unusual patterns or outliers.</button>
+                                <button class="suggestion">Suggest useful visualizations.</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="composer">
+                    <form id="composer"><textarea id="input" rows="1" placeholder="Ask a question about your data…"
+                            aria-label="Message"></textarea>
+                        <button class="btn btn-primary" id="send" aria-label="Send message"><i
+                                data-lucide="arrow-up"></i></button>
+                    </form>
+                    <div class="tools"><span>Enter to send · Shift+Enter for new line</span><button class="icon-btn"
+                            id="clear" type="button"><i data-lucide="trash-2" width="14" height="14"></i> Clear
+                            conversation</button></div>
+                </div>
+            </section>
+            <aside class="panel" id="panel" aria-label="Dataset context">
+                <h3>Dataset</h3>
+                <dl>
+                    <dt>File</dt>
+                    <dd id="p-file"></dd>
+                    <dt>Format</dt>
+                    <dd id="p-type"></dd>
+                    <dt>Size</dt>
+                    <dd id="p-size"></dd>
+                    <dt>Rows</dt>
+                    <dd id="p-rows"></dd>
+                    <dt>Columns</dt>
+                    <dd id="p-cols"></dd>
+                    <dt>ID</dt>
+                    <dd id="p-id"></dd>
+                </dl>
+                <h3>Columns</h3>
+                <ul class="col-list" id="col-list"></ul>
+                <p class="muted hidden" id="col-empty">Column information is unavailable right now.</p>
+            </aside>
+        </div>
+    </main>
+    <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
+    <script src="js/api.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/analysis.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+
+</html>
